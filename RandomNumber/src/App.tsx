@@ -1,15 +1,17 @@
 import './App.css'
 import "bootstrap/dist/js/bootstrap.js"
 import "bootstrap/dist/css/bootstrap.css"
-import { useEffect,useState } from 'react'
+import { useState } from 'react'
 function App() {
 
-const [random, setRandom] = useState(0)
+const [value, setValue] = useState(0)
 
-const updateNum((min, max )=>{
-  setRandom(Math.random() * (max - min) +min)
+let randomBtn = ()=>{
+// console.log(Math.random() * (0 - 100) + 100)
+let converted = Math.random() * (0 - 100) + 100
+  setValue(Math.floor(converted))
+}
 
-})
 
   return (
     <>
@@ -20,10 +22,10 @@ const updateNum((min, max )=>{
           </div>
     
             <div className="container ">
-            <button type='button' className='btn btn-outline-primary' onClick={updateNum}>Random Number</button>
+            <button type='button' className='btn btn-outline-primary' onClick={randomBtn}>Random Number</button>
             </div>
             <div className="displayhehe">
-              
+              <span>{value}</span>
             </div>
 
         </div>
